@@ -32,6 +32,12 @@ final class RemoteConfigProvider {
     }
     
     func setupConfigs() {
+        /**User Geo location service here and identify the user's location.
+         Then identify that the user from Asia or not.
+         If user from Asia send AS as userRegion
+         Send NOT if they aren't from Asia
+         */
+        Analytics.setUserProperty("NOT", forName: "userRegion")
         let settings = RemoteConfigSettings()
         // fetch interval that how frequent you need to check updates from the server
         settings.minimumFetchInterval = isDebug ? 0 : 43200
